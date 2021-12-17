@@ -60,7 +60,7 @@
 								</form>
 
 								<p><b>Tình trạng:</b> Còn hàng</p>
-								<p><b>Điều kiện:</b> Mơi 100%</p>
+								<p><b>Điều kiện:</b> Mới 100%</p>
 								<p><b>Thương hiệu:</b> {{$value->brand_name}}</p>
 								<p><b>Danh mục:</b> {{$value->category_name}}</p>
 								<a href=""><img src="images/product-details/share.png" class="share img-responsive"  alt="" /></a>

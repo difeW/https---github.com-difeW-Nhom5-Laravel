@@ -17,8 +17,9 @@
         </div>
         @endforeach
     </div>
-    <a  class="btn btn-default" href="{{URL::to('/checkout')}}" >Thêm địa chỉ</a>
-    
+    <div class="text-center" style="margin-bottom: 2rem;">
+        <a class="btn btn-default" href="{{URL::to('/checkout')}}">Thêm địa chỉ</a>
+    </div>
 </div>
 
 @endsection
