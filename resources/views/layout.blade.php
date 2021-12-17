@@ -354,8 +354,8 @@
                         <div class="single-widget">
                             <h2>Nhận tin khuyến mãi</h2>
                             <form action="#" class="searchform">
-                                <input type="text" placeholder="Địa chỉ email của bạn" />
-                                <button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button>
+                                <input type="text" class="single-widget-input" placeholder="Địa chỉ email của bạn" />
+                                <button type="submit" class="btn btn-default single-widget-button"><i class="fa fa-arrow-circle-o-right"></i></button>
                                 <p>Nhận những thông tin khuyến mãi sớm nhất từ MuseTech<br />musetech@gamil.com</p>
                             </form>
                         </div>
