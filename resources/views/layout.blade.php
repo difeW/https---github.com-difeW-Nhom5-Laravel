@@ -91,13 +91,13 @@
                         <div class="shop-menu pull-right">
                             <ul class="nav navbar-nav ">
                                
-                                <li><a href="#"><i class="fa fa-star"></i> Yêu thích</a></li>
+                                <!-- <li><a href="#"><i class="fa fa-star"></i> Yêu thích</a></li>
                                 <?php
                                    $customer_id = Session::get('customer_id');
                                    $shipping_id = Session::get('shipping_id');
                                    if($customer_id!=NULL && $shipping_id==NULL){ 
                                  ?>
-                                  <li><a href="{{URL::to('/checkout')}}"><i class="fa fa-crosshairs"></i> Thanh toán</a></li>
+                                  <li><a href="{{URL::to('/checkout')}}"><i class="fa fa-crosshairs"></i> Thanh toán</a></li> -->
                                 
                                 <?php
                                  }elseif($customer_id!=NULL && $shipping_id!=NULL){
@@ -174,7 +174,7 @@
                                 </li> 
                                     
                                 </li> 
-                                <li><a href="{{URL::to('/gio-hang')}}">Giỏ hàng</a></li>
+                                <!-- <li><a href="{{URL::to('/gio-hang')}}">Giỏ hàng</a></li> -->
                                 <li><a href="{{URL::to('/lien-he')}}">Liên hệ</a></li>
                             </ul>
                         </div>
@@ -240,22 +240,11 @@
     
     <section>
         <div class="container">
-<<<<<<< HEAD
-            <div class="row">
-                
-                <div class="col-sm-9 padding-right">
-
-                   @yield('content')
-                    
-                </div>
-            </div>
-=======
             @yield('content')
->>>>>>> 37bb7c3e0e5929c0b529856504e668baeb47ffdf
         </div>
     </section>
     
-    <footer id="footer"><!--Footer-->
+    <!-- <footer id="footer">Footer -->
         <!-- <div class="footer-top">
             <div class="container">
                 <div class="row">
@@ -355,7 +344,7 @@
                             <h2>Các chi nhánh của MuseTech</h2>
                             <ul class="nav nav-pills nav-stacked">
                                 <li><a href="#">Chi nhánh 1: 14 Cộng Hòa, Quận Tân Bình, TpHCM</a></li>
-                                <li><a href="#">Chi nhánh 2: 2 Lữu Bán Bích, Quận Tân Phú, TpHCM</a></li>
+                                <li><a href="#">Chi nhánh 2: 2 Lữ Bán Bích, Quận Tân Phú, TpHCM</a></li>
                                 <li><a href="#">Chi nhánh 3: 15 Nguyễn Trãi, Quận Hoàn Kiếm, tpHN</a></li>
                                 <li><a href="#">Chi nhánh 4: 521 Cách Mạng Tháng 8, Quận 3, TpHCM</a></li>
                             </ul>
@@ -379,7 +368,7 @@
         <div class="footer-bottom">
             <div class="container">
                 <div class="row">
-                    <p class="pull-left">MuseTech: <span style="color: var(--dark-blue);">Phựng sự đất nước và con người</span></p>
+                    <p class="pull-left">MuseTech: <span style="color: var(--dark-blue);">Phụng sự đất nước và con người</span></p>
                     <p class="pull-right">Designed by <span><a target="_blank" href="https://github.com/difeW/https---github.com-difeW-Nhom5-Laravel">Team's Git</a></span></p>
                 </div>
             </div>
@@ -413,7 +402,7 @@
             $('.send-order').click(function(){
                 Swal.fire({
                   title: "Xác nhận đơn hàng",
-                  text: "Đơn hàng sẽ không được hoàn trả khi đặt,bạn có muốn đặt không?",
+                  text: "Đơn hàng sẽ không được hoàn trả khi đặt, bạn có muốn đặt không?",
                   type: "warning",
                   showCancelButton: true,
                   confirmButtonClass: "btn-danger",

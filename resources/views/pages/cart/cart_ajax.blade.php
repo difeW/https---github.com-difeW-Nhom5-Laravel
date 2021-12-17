@@ -101,7 +101,7 @@
 							<td colspan="1" class="text-right">
 								<h3>TỔNG:</h3>
 							</td>
-							<td colspan="2">
+							<td colspan="2" class="text-center">
 								<h3><span>{{number_format($total,0,',','.')}} VND</span></h3>
 								@if(Session::get('coupon'))
 								<li>
