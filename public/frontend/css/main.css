@@ -1986,15 +1986,24 @@ h2.title {
   font-size: 14px
 }
 
-
-.review-payment h2 {
-  color: #696763;
-  font-size: 20px;
-  font-weight: 300;
-  margin-top: 45px;
-  margin-bottom: 20px
+.review-payment{
+  margin-bottom: 3rem;
 }
 
+.review-payment h2 {
+  color: var(--dark-blue);
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.infoShopper{
+  display: flex;
+  justify-content: space-between;
+}
+
+.infoShopper span{
+  font-size: 17px;
+}
 .payment-options {
   margin-left: 3rem;
   display: flex;
@@ -2032,7 +2041,15 @@ h2.title {
   border-bottom: 1px solid #F7F7F0;
 }
 
+.infoAddr{
+  display: flex;
+  justify-content: center;
+}
 
+.info-shopper{
+  display: flex;
+  justify-content: center;
+}
 
 
 /*************************

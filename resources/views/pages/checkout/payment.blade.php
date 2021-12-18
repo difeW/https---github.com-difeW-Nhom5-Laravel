@@ -16,12 +16,14 @@
 			</ol>
 		</div>
 
-
+		<div style="background-color: var(--saphire-blue); height: 3px;"></div>
 		<div class="review-payment">
-			<p><b>Tên</b> {{$ship->shipping_name}}</p>
-			<p><b>Địa chỉ:</b> {{$ship->shipping_address}}</p>
-			<p><b>Số điện thoại</b> {{$ship->shipping_phone}}</p>
-			<h2>Xem lại giỏ hàng</h2>
+			<h2>Địa chỉ nhận hàng</h2>
+			<div class="infoShopper">
+				<span><b> {{$ship->shipping_name}}</b></span>
+				<span><b>{{$ship->shipping_phone}}</b></span>
+				<span>{{$ship->shipping_address}}</span>
+			</div>
 		</div>
 		<div class="table-responsive cart_info">
 

@@ -3,7 +3,7 @@
 
 <div class="container">
     <h2 class="title text-center">Chọn Địa Chỉ</h2>
-    <div class="row justify-content-center">
+    <div class="row infoAddr">
         @foreach($shipping as $key => $ship)
         <div style="border: 1px solid var(--saphire-blue); margin:10px; border-radius: 10px;" class="col-md-4">
             <div class="text-right">
@@ -12,7 +12,7 @@
             <a href="{{URL::to('/payment/'.$ship->shipping_id)}}" class="clearfix" style="padding: 5px; color: black;">
                 <p><b>Tên:</b> {{$ship->shipping_name}}</p>
                 <p><b>Địa chỉ:</b> {{$ship->shipping_address}}</p>
-                <p><b>Số điện thoại</b> {{$ship->shipping_phone}}</p>
+                <p><b>Số điện thoại:</b> {{$ship->shipping_phone}}</p>
             </a>
         </div>
         @endforeach

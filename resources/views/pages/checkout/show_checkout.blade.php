@@ -15,7 +15,7 @@
 			</div>/register-req -->
 
 		<div class="shopper-informations">
-			<div class="row">
+			<div class="row info-shopper">
 				<div class="col-sm-6">
 					<div class="bill-to">
 						<p>Điền thông tin nhận hàng</p>
