@@ -27,7 +27,7 @@
 						<tr class="cart_menu">
 							<td class="image text-center">Hình ảnh</td>
 							<td class="description text-center">Tên sản phẩm</td>
-							<td class="description text-center">Số lượng tồn</td>
+							<!-- <td class="description text-center">Số lượng tồn</td> -->
 							<td class="price text-center">Giá sản phẩm</td>
 							<td class="quantity text-center">Số lượng</td>
 							<td class="total text-center">Thành tiền</td>
@@ -45,17 +45,17 @@
 						$total += $subtotal;
 						?>
 						<tr>
-							<td class="cart_product">
+							<td class="cart_product text-center">
 								<img src="{{asset('/public/uploads/product/'.$cart['product_image'])}}" width="90" alt="{{$cart['product_name']}}" />
 							</td>
 							<td class="cart_description text-center">
 								<h4><a href=""></a></h4>
 								<p>{{$cart['product_name']}}</p>
 							</td>
-							<td class="cart_description text-center">
+							<!-- <td class="cart_description text-center">
 								<h4><a href=""></a></h4>
 								<p>{{$cart['product_qty']}}</p>
-							</td>
+							</td> -->
 							<td class="cart_price">
 								<h4><a href=""></a></h4>
 								<p>{{number_format($cart['product_price'],0,',','.')}} VND</p>
@@ -64,7 +64,6 @@
 								<div class="cart_quantity_button">
 
 									<input class="cart_quantity" type="number" min="1" name="cart_qty[{{$cart['session_id']}}]" value="{{$cart['product_qty']}}" style="max-width: 2.5em;">
-
 
 								</div>
 							</td>
@@ -82,26 +81,27 @@
 
 						@endforeach
 						<tr>
+							<td colspan="2" class="text-center"><a class="btn btn-default check_out" href="{{url('/del-all-product')}}">Xóa tất cả</a></td>
+
 							<td><input type="submit" value="Cập nhật giỏ hàng" name="update_qty" class="check_out btn btn-default btn-sm"></td>
-							<td><a class="btn btn-default check_out" href="{{url('/del-all-product')}}">Xóa tất cả</a></td>
-							<td>
+							<!-- <td>
 								@if(Session::get('coupon'))
 								<a class="btn btn-default check_out" href="{{url('/unset-coupon')}}">Xóa mã khuyến mãi</a>
 								@endif
-							</td>
+							</td> -->
 
-							<td>
+							<!-- <td>
 								@if(Session::get('customer_id'))
 								<a class="btn btn-default check_out" href="{{url('/shipping')}}">Đặt hàng</a>
 								@else
 								<a class="btn btn-default check_out" href="{{url('/dang-nhap')}}">Đặt hàng</a>
 								@endif
-							</td>
+							</td> -->
 
 							<td colspan="1" class="text-right">
 								<h3>TỔNG:</h3>
 							</td>
-							<td colspan="2" class="text-center">
+							<td colspan="1" class="text-center">
 								<h3><span>{{number_format($total,0,',','.')}} VND</span></h3>
 								@if(Session::get('coupon'))
 								<li>
@@ -145,20 +145,26 @@
 
 							</td>
 						</tr>
+
+						<tr>
+							<td colspan="5" class="text-right">
+								@if(Session::get('customer_id'))
+								<a class="btn btn-default check_out" href="{{url('/shipping')}}" style="padding: 1% 5%;">ĐẶT HÀNG</a>
+								@else
+								<a class="btn btn-default check_out" href="{{url('/dang-nhap')}}" style="padding: 1% 5%;">ĐẶT HÀNG</a>
+								@endif
+							</td>
+						</tr>
 						@else
 						<tr>
-							<td colspan="5">
-								<center>
-									@php
-									echo 'Bạn chưa có sản phẩm nào trong giỏ';
-									@endphp
-								</center>
+							<td colspan="6" class="text-center">
+								@php
+								echo 'Bạn chưa có sản phẩm nào trong giỏ';
+								@endphp
 							</td>
 						</tr>
 						@endif
 					</tbody>
-
-
 
 			</form>
 			@if(Session::get('car'))
