@@ -27,4 +27,25 @@ $(document).ready(function(){
 	        zIndex: 2147483647 // Z-Index for the overlay
 		});
 	});
+
+
+	//login_checkout
+
+	var group = document.getElementById('register_form');
+    group.style.display = 'none';
+
+	$('#signup').click(function(){
+		var login = document.getElementById('login_form');
+        login.style.display = 'none';
+
+		$('#register_form').show();
+	})
+
+	$('#signin').click(function(){
+		var register = document.getElementById('register_form');
+        register.style.display = 'none';
+
+		$('#login_form').show();
+	})
+
 });
