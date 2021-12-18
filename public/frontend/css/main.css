@@ -103,6 +103,7 @@ a#scrollUp i{
   font-weight: 600;
   color: var(--saphire-blue);
   text-align: center;
+  letter-spacing: 4px;
 }
 
 
@@ -242,9 +243,22 @@ a#scrollUp i{
   background-color: white;
 }
 
+
 .navbar-collapse.collapse{
-  padding-left: 0;
+  padding-left: 0px;
 }
+/* 
+.affix {
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  color: white;
+  justify-content: space-between;
+}
+
+.affix+.container-fluid {
+  padding-top: 70px;
+} */
 
 .mainmenu ul li{
   padding-right: 14px;
@@ -636,9 +650,9 @@ ul.sub-menu {
 	  background:  var(--saphire-blue);
 }
 
-.item {
+/* .item {
   padding-left: 100px;
-}
+} */
 
 
 .pricing {
@@ -1938,7 +1952,7 @@ h2.title {
 .order-message p {
   color: #696763;
   font-size: 20px;
-  font-weight: 300
+  font-weight: 300;
 }
 
 

@@ -28,19 +28,6 @@
     <link href="{{asset('frontend/css/main.css')}}" rel="stylesheet">
     <link href="{{asset('frontend/css/responsive.css')}}" rel="stylesheet">
     <link href="{{asset('frontend/css/sweetalert.css')}}" rel="stylesheet">
-    <style>
-        /* Note: Try to remove the following lines to see the effect of CSS positioning */
-        .affix {
-            top: 0;
-            width: 100%;
-            z-index: 9999 !important;
-        }
-
-        .affix+.container-fluid {
-            padding-top: 70px;
-        }
-    </style>
-
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
@@ -92,76 +79,8 @@
         <div class="header-middle">
             <!--header-middle-->
             <div class="container">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="shop-menu pull-right">
-                            <ul class="nav navbar-nav">
-
-                                <li><a href="#"><i class="fa fa-star"></i> Yêu thích</a></li>
-                                <?php
-                                $customer_id = Session::get('customer_id');
-                                $shipping_id = Session::get('shipping_id');
-                                if ($customer_id != NULL && $shipping_id == NULL) {
-                                ?>
-                                    <li><a href="{{URL::to('/checkout')}}"><i class="fa fa-crosshairs"></i> Thanh toán</a></li>
-
-                                <?php
-                                } elseif ($customer_id != NULL && $shipping_id != NULL) {
-                                ?>
-                                    <li><a href="{{URL::to('/payment')}}"><i class="fa fa-crosshairs"></i> Thanh toán</a></li>
-                                <?php
-                                } else {
-                                ?>
-                                    <li><a href="{{URL::to('/dang-nhap')}}"><i class="fa fa-crosshairs"></i> Thanh toán</a></li>
-                                <?php
-                                }
-                                ?>
-
-
-                                <li><a href="{{URL::to('/gio-hang')}}"><i class="fa fa-shopping-cart"></i> Giỏ hàng</a></li>
-                                <?php
-                                $customer_id = Session::get('customer_id');
-                                if ($customer_id != NULL) {
-                                ?>
-                                    <li class="dropdown">
-                                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                                            <span class="username">
-                                                <?php
-                                                $name = Session::get('customer_name');
-                                                if ($name) {
-                                                    echo $name;
-                                                }
-                                                ?>
-                                            </span>
-                                            <b class="caret"></b>
-                                        </a>
-                                        <ul class="dropdown-menu extended logout">
-                                            <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
-                                            <li><a href="{{URL::to('/handcash')}}"><i class="fa fa-cog"></i> Đơn mua</a></li>
-                                            <li><a href="{{URL::to('/logout-checkout')}}"><i class="fa fa-lock"></i> Đăng xuất</a></li>
-                                        </ul>
-                                    </li>
-                                <?php
-                                } else {
-                                ?>
-                                    <li><a href="{{URL::to('/dang-nhap')}}"><i class="fa fa-lock"></i> Đăng nhập</a></li>
-                                <?php
-                                }
-                                ?>
-
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--/header-middle-->
-
-        <div class="header-bottom">
-            <!--header-bottom-->
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-8" data-offset-top="170" data-spy="affix">
+                <div class="row" >
+                    <div class="col-sm-8" >
                         <div class="navbar-header">
                             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                                 <span class="sr-only">Toggle navigation</span>
@@ -180,11 +99,59 @@
                                         @endforeach
                                     </ul>
                                 </li>
-                                <li class="dropdown"><a href="#">Tin tức<i class="fa fa-angle-down"></i></a>
 
-                                </li>
                                 <li><a href="{{URL::to('/gio-hang')}}">Giỏ hàng</a></li>
-                                <li><a href="{{URL::to('/lien-he')}}">Liên hệ</a></li>
+                                
+                                <?php
+                                $customer_id = Session::get('customer_id');
+                                $shipping_id = Session::get('shipping_id');
+                                if ($customer_id != NULL && $shipping_id == NULL) {
+                                ?>
+                                    <li><a href="{{URL::to('/checkout')}}"> Thanh toán</a></li>
+
+                                <?php
+                                } elseif ($customer_id != NULL && $shipping_id != NULL) {
+                                ?>
+                                    <li><a href="{{URL::to('/payment')}}"> Thanh toán</a></li>
+                                <?php
+                                } else {
+                                ?>
+                                    <li><a href="{{URL::to('/dang-nhap')}}"> Thanh toán</a></li>
+                                <?php
+                                }
+                                ?>
+
+                                
+                                <?php
+                                $customer_id = Session::get('customer_id');
+                                if ($customer_id != NULL) {
+                                ?>
+                                    <li class="dropdown">
+                                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                            <span class="username">
+                                                <?php
+                                                $name = Session::get('customer_name');
+                                                if ($name) {
+                                                    echo $name;
+                                                }
+                                                ?>
+                                            </span>
+                                            <b class="caret"></b>
+                                        </a>
+                                        <ul class="dropdown-menu extended logout">
+                                            <li><a href="#"></i>Profile</a></li>
+                                            <li><a href="{{URL::to('/handcash')}}"> Đơn mua</a></li>
+                                            <li><a href="{{URL::to('/logout-checkout')}}">Đăng xuất</a></li>
+                                        </ul>
+                                    </li>
+                                <?php
+                                } else {
+                                ?>
+                                    <li><a href="{{URL::to('/dang-nhap')}}">Tài khoảng</a></li>
+                                <?php
+                                }
+                                ?>
+
                             </ul>
                         </div>
                     </div>
@@ -200,6 +167,8 @@
                 </div>
             </div>
         </div>
+        <!--/header-middle-->
+
         <!--/header-bottom-->
     </header>
     <!--/header-->
@@ -229,7 +198,7 @@
                             <div class="item {{$i==1 ? 'active' : '' }}">
 
                                 <div class="col-sm-12">
-                                    <img alt="{{$slide->slider_desc}}" src="{{asset('uploads/slider/'.$slide->slider_image)}}" height="200" width="100%" class="img img-responsive img-slider">
+                                    <img alt="{{$slide->slider_desc}}" src="{{asset('uploads/slider/'.$slide->slider_image)}}" height="100" width="120%" class="img img-responsive img-slider">
 
                                 </div>
                             </div>
