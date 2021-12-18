@@ -1674,7 +1674,7 @@ h2.title {
 
 .cart_product {
   display: block;
-  margin: 15px -70px 10px 25px;
+  /* margin: 15px -70px 10px 25px; */
 }
 
 .cart_quantity_button a {
@@ -1820,11 +1820,12 @@ h2.title {
 }
 
 .update, .check_out {
-  background:  var(--saphire-blue);
+  color: white; 
+  background: var(--saphire-blue);
   border-radius: 0;
-  color: #FFFFFF;
   margin-top: 18px;
-  border: none;
+  border: solid 1px var(--saphire-blue);
+  border-radius: 10px;
   padding: 5px 15px;
 }
 .update{
@@ -1835,6 +1836,9 @@ h2.title {
   margin-left: 20px
 }
 
+.send_order{
+  border-radius: 10px;
+}
 
 
 /*************************
@@ -1927,7 +1931,7 @@ h2.title {
 .order-message p {
   color: #696763;
   font-size: 20px;
-  font-weight: 300
+  font-weight: 300;
 }
 
 
@@ -1942,7 +1946,7 @@ h2.title {
 
 .form-two, .form-one {
   float: left;
-  width: 47%
+  /* width: 47%; */
 }
 
 
@@ -1992,15 +1996,15 @@ h2.title {
 }
 
 .payment-options {
-  margin-bottom:125px;
-  margin-top: -25px
+  margin-left: 3rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 .payment-options span label {
-  color: #696763;
-  font-size: 14px;
-  font-weight: 300;
-  margin-right: 30px;
+  color: black;
+  font-size: 15px;
+  font-weight: 400;
 }
 
 #cart_items .cart_info 
@@ -2441,7 +2445,7 @@ h2.title {
 .btn.btn-primary {
   background: var(--saphire-blue);
   border: 0 none;
-  border-radius: 0;
+  border-radius: 10px;
   margin-top: 16px;
 }
 

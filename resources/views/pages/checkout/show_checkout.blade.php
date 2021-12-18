@@ -6,7 +6,7 @@
 		<div class="breadcrumbs">
 			<ol class="breadcrumb">
 				<li><a href="{{URL::to('/')}}">Trang chủ</a></li>
-				<li class="active">Thanh toán giỏ hàng</li>
+				<li class="active">Thanh toán</li>
 			</ol>
 		</div>
 
@@ -14,10 +14,9 @@
 				<p>Làm ơn đăng ký hoặc đăng nhập để thanh toán giỏ hàng và xem lại lịch sử mua hàng</p>
 			</div>/register-req -->
 
-		<div class="shopper-informations text-center">
+		<div class="shopper-informations">
 			<div class="row">
-
-				<div class="col-sm-12 clearfix">
+				<div class="col-sm-6">
 					<div class="bill-to">
 						<p>Điền thông tin nhận hàng</p>
 						<div class="form-one">
@@ -28,7 +27,7 @@
 								<input type="text" name="shipping_address" class="shipping_address" placeholder="Địa chỉ nhận hàng">
 								<input type="text" name="shipping_phone" class="shipping_phone" placeholder="Số điện thoại">
 								<textarea name="shipping_notes" class="shipping_notes" placeholder="Ghi chú" rows="5"></textarea>
-								<div class="">
+								<div>
 									<div class="form-group">
 										<label for="exampleInputPassword1">Hình thức thanh toán</label>
 										<select name="payment_select" class="form-control input-sm m-bot15 payment_select">
@@ -37,7 +36,7 @@
 										</select>
 									</div>
 								</div>
-								<input type="submit" value="Xác nhận đơn hàng" class="btn btn-primary btn-sm send_order">
+								<input type="submit" value="Xác nhận đơn hàng" class="btn btn-primary btn-sm send_order" ">
 							</form>
 						</div>
 					</div>
