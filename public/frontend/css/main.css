@@ -334,7 +334,7 @@ ul.sub-menu {
 	position: absolute;
 	top: 30px;
 	left: 0;
-	background: none;
+	background: white;
 	list-style: none;
 	padding: 0;
 	margin: 0;
@@ -956,10 +956,7 @@ h2.title {
   transition: height 500ms ease 0s;
   width: 100%;
   display: block;
-<<<<<<< HEAD
   opacity: 0;
-=======
->>>>>>> f2844a4b7d5122095f1db00586ca7aba0f314986
 }
 
 .single-products:hover .product-overlay {
