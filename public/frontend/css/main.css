@@ -1068,7 +1068,7 @@ h2.title {
 }
 
 .category-tab ul {
-  background: #40403E;
+  background: white;
   border-bottom: 1px solid  var(--saphire-blue);
   list-style: none outside none;
   margin: 0 0 30px;
@@ -1079,7 +1079,7 @@ h2.title {
 .category-tab ul li a {
   border: 0 none;
   border-radius: 0;
-  color: #B3AFA8;
+  color: var(--saphire-blue);
   display: block;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
@@ -1300,15 +1300,21 @@ h2.title {
 	left:0
 }
 
+.product-information form {
+  display: flex;
+  flex-direction: column;
+}
+
 .product-information h2 {
-  color: #363432;
+  color: var(--dark-blue);
   font-family: 'Roboto', sans-serif;
-  font-size: 20px;
+  font-size: 24px;
+  font-weight: 500;
   margin-top: 0;
 }
 
 .product-information p {
-  color: #696763;
+  color: var(--saphire-blue);
   font-family: 'Roboto', sans-serif;
   margin-bottom: 5px;
 }
@@ -1330,7 +1336,7 @@ h2.title {
 }
 .product-information span input {
   border: 1px solid #DEDEDC;
-  color: #696763;
+  color: var(--saphire-blue);
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
   font-weight: 700;
@@ -1390,7 +1396,7 @@ h2.title {
 }
 
 #reviews ul li a {
-  color: #696763;
+  color: var(--saphire-blue);
   display: block;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
@@ -1418,7 +1424,7 @@ h2.title {
 #reviews form span input {
   background:#F0F0E9;
   border: 0 none;
-  color: #A6A6A1;
+  color: var(--saphire-blue);
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   outline: medium none;
@@ -1432,7 +1438,7 @@ h2.title {
 #reviews textarea {
   background: #F0F0E9;
   border: medium none;
-  color: #A6A6A1;
+  color: var(--dark-blue);
   height: 195px;
   margin-bottom: 25px;
   margin-top: 15px;
@@ -1445,11 +1451,11 @@ h2.title {
 
 #reviews button {
   background:  var(--saphire-blue);
-  border: 0 none;
+  border-radius: 10px;
   border-radius: 0;
   color: #FFFFFF;
   font-family: 'Roboto', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 
