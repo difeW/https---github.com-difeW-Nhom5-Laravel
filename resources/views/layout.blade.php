@@ -326,7 +326,7 @@
                                 <h2>Các chi nhánh của MuseTech</h2>
                                 <ul class="nav nav-pills nav-stacked">
                                     <li><a href="#">Chi nhánh 1: 14 Cộng Hòa, Quận Tân Bình, TpHCM</a></li>
-                                    <li><a href="#">Chi nhánh 2: 2 Lữu Bán Bích, Quận Tân Phú, TpHCM</a></li>
+                                    <li><a href="#">Chi nhánh 2: 2 Lữ Bán Bích, Quận Tân Phú, TpHCM</a></li>
                                     <li><a href="#">Chi nhánh 3: 15 Nguyễn Trãi, Quận Hoàn Kiếm, tpHN</a></li>
                                     <li><a href="#">Chi nhánh 4: 521 Cách Mạng Tháng 8, Quận 3, TpHCM</a></li>
                                 </ul>

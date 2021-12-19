@@ -2,10 +2,10 @@
 @section('content')
 
 <section id="cart_items">
-	<div class="container">
-	<h2 class="title text-center">Xem đơn mua</h2>
+	<div class="container order">
+	<h2 class="title text-center" style="font-size: 24px; font-weight: 700; margin-bottom: 10px;">Thông tin đơn hàng</h2>
 		@foreach($order as $key => $o)
-		<div style="border: 1px solid; width: 70%; padding: 10px; margin: 20px;">
+		<div style="border: 5px solid var(--dark-blue); width: 70%; padding: 10px; margin: 20px;">
 			<a style="padding-top: 10px; color: black;" href="{{URL::to('/order-detail/'.$o->order_id)}}" >
 				<p><b>Tên:</b> {{$o->customer_name}}</p>
 				<p><b>Sản phẩm:</b></p>
@@ -49,7 +49,7 @@
 				</table>
 				<p style="display: block inline;"><b>Tình Trạng:</b> {{$o->order_status}}.</p>
 				<hr>
-				<p class="text-right"><b>Tổng số tiền:</b> {{$o->order_total}}</p>
+				<h3 class="text-right" style="margin-right: 2.5rem;">Tổng thanh toán: <b>{{$o->order_total}}</b></h3>
 			</a>
 		</div>
 		@endforeach

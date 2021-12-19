@@ -18,11 +18,11 @@
 
 		<div style="background-color: var(--saphire-blue); height: 3px;"></div>
 		<div class="review-payment">
-			<h2>Địa chỉ nhận hàng</h2>
+			<h2><span class="glyphicon glyphicon-map-marker"></span> Địa chỉ nhận hàng</h2>
 			<div class="infoShopper">
 				<span><b> {{$ship->shipping_name}}</b></span>
-				<span><b>{{$ship->shipping_phone}}</b></span>
 				<span>{{$ship->shipping_address}}</span>
+				<span>Điện thoại: {{$ship->shipping_phone}}</span>
 			</div>
 		</div>
 		<div class="table-responsive cart_info">
@@ -95,16 +95,16 @@
 				</h3>
 			</div>
 			<div style="background-color: var(--saphire-blue); height: 3px;"></div>
-			<h4 style="margin-left: 2rem;">PHƯƠNG THỨC THANH TOÁN</h4>
+			<h3 style="margin-left: 2rem; color: var(--dark-blue);">Phương thức thanh toán</h3>
 			<div class="payment-options">
 				<span>
-					<label><input name="payment_option" value="1" type="radio"> Trả bằng thẻ ATM</label>
+					<label><input name="payment_option" value="1" type="radio"><i class="fas fa-credit-card"></i> Trả bằng thẻ ATM</label>
 				</span>
 				<span>
-					<label><input name="payment_option" value="2" type="radio"> Nhận tiền mặt</label>
+					<label><input name="payment_option" value="2" type="radio"><i class="fas fa-money-bill"></i> Nhận tiền mặt</label>
 				</span>
 				<span>
-					<label><input name="payment_option" value="3" type="radio"> Thanh toán thẻ ghi nợ</label>
+					<label><input name="payment_option" value="3" type="radio"><i class="fab fa-cc-mastercard"></i> Thanh toán thẻ ghi nợ</label>
 				</span>
 			</div>
 			<div class="text-right">
@@ -114,6 +114,8 @@
 		</form>
 	</div>
 </section>
+
+<script src="https://kit.fontawesome.com/75e5dad444.js" crossorigin="anonymous"></script>
 <!--/#cart_items-->
 
 @endsection

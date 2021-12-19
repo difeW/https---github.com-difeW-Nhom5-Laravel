@@ -1498,24 +1498,35 @@ h2.title {
 
 #form {
   display: block;
-  margin-bottom: 185px;
-  margin-top: 185px;
+  margin: 5% 0;
   overflow: hidden;
 }
 
-.login-form {
+.account{
+  display: flex;
+  justify-content: space-between;
+}
 
+.login-form {
+  border: solid 2px var(--dark-blue);
+  padding: 8% 10%;
+  border-radius: 10px;
+}
+
+#signup, #signin{
+  color: var(--saphire-blue);
 }
 
 .signup-form {
-
+  border: solid 2px var(--dark-blue);
+  padding: 8% 10%;
+  border-radius: 10px;
 }
 
 .login-form h2, .signup-form h2 {
-  color: #696763;
+  color: var(--dark-blue);
   font-family: 'Roboto', sans-serif;
-  font-size: 20px;
-  font-weight: 300;
+  font-weight: 500;
   margin-bottom: 30px;
 }
 
@@ -1546,8 +1557,10 @@ h2.title {
   margin-right: 5px;
 }
 
-.login-form form button {
-  margin-top: 23px;
+
+.btn-acc{
+  display: flex;
+  justify-content: center;
 }
 
 .login-form form button, .signup-form form button {
@@ -1557,7 +1570,9 @@ h2.title {
   color: #FFFFFF;
   display: block;
   font-family: 'Roboto', sans-serif;
-  padding: 6px 25px;
+  padding: 3% 9%;
+  border-radius: 10px;
+  margin: 2rem 0;
 }
 
 .login-form label{
@@ -2023,6 +2038,8 @@ h2.title {
 .infoShopper{
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
+  margin-left: 3%;
 }
 
 .infoShopper span{
@@ -2038,6 +2055,10 @@ h2.title {
   color: black;
   font-size: 15px;
   font-weight: 400;
+}
+
+.payment-options span label input{
+  margin-right: 1.5rem;
 }
 
 #cart_items .cart_info 
@@ -2075,6 +2096,11 @@ h2.title {
   justify-content: center;
 }
 
+.order{
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
 
 /*************************
 *******Blog CSS******
