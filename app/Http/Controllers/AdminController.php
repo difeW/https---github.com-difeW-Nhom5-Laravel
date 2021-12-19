@@ -154,8 +154,8 @@ class AdminController extends Controller
         $result = DB::table('tbl_admin')->where('admin_email', $admin_email)->where('admin_password', $admin_password)->first();
         if($result)
         {
-            $_SESSION['name'] = $result->admin_name;
-            $_SESSION['admin_id'] = $result->admin_id;
+            session::put('name', $result->admin_name);
+            session::put('admin_id', $result->admin_id);
             return  view('admin.dashboard');
         }else{
             $_SESSION['message'] = "Tai khoan mat khau khong dung";

@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Roles;
 use App\Models\Admin;
 use Session;
+
+
 class UserController extends Controller
 {
     /**
@@ -17,7 +19,6 @@ class UserController extends Controller
      */
     public function index()
     {
-        
         $admin = Admin::with('roles')->orderBy('admin_id','DESC')->paginate(5);
         return view('admin.users.all_users')->with(compact('admin'));
     }
