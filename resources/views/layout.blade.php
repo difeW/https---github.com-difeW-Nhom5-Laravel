@@ -147,7 +147,7 @@
                                 <?php
                                 } else {
                                 ?>
-                                    <li><a href="{{URL::to('/dang-nhap')}}">Tài khoảng</a></li>
+                                    <li><a href="{{URL::to('/dang-nhap')}}">Tài khoản</a></li>
                                 <?php
                                 }
                                 ?>
