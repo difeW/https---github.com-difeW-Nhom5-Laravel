@@ -274,6 +274,7 @@ class CheckoutController extends Controller
             $order_d_data['product_price'] = $v_content['product_price'];
             $order_d_data['product_sales_quantity'] = $v_content['product_qty'];
             DB::table('tbl_order_details')->insert($order_d_data);
+            DB::table('tbl_product')->where('product_id',$v_content['product_id'])->Decrement('product_quantity',$v_content['product_qty']);
         }
         if($data['payment_method']==1){
 

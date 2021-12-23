@@ -1,5 +1,6 @@
 @extends('layout')
 @section('content')
+
 <div class="features_items"><!--features_items-->
        
                         <h2 class="title text-center" style="color: var(--saphire-blue);">Sản phẩm mới nhất</h2>
@@ -47,4 +48,5 @@
                        {!!$all_product->links()!!}
                       </ul>
         <!--/recommended_items-->
+
 @endsection

@@ -2,6 +2,7 @@
 @section('content')
 
 <section id="cart_items">
+
 	<div class="container">
 		<div class="breadcrumbs">
 			<ol class="breadcrumb">
@@ -52,10 +53,10 @@
 								<h4><a href=""></a></h4>
 								<p>{{$cart['product_name']}}</p>
 							</td>
-							<!-- <td class="cart_description text-center">
-								<h4><a href=""></a></h4>
-								<p>{{$cart['product_qty']}}</p>
-							</td> -->
+							<td class="cart_description text-center">
+                  <h4><a href=""></a></h4>
+                  <p>{{$cart['product_quantity']}}</p>
+              </td>
 							<td class="cart_price">
 								<h4><a href=""></a></h4>
 								<p>{{number_format($cart['product_price'],0,',','.')}} VND</p>
@@ -63,7 +64,11 @@
 							<td class="cart_quantity text-center">
 								<div class="cart_quantity_button">
 
-									<input class="cart_quantity" type="number" min="1" name="cart_qty[{{$cart['session_id']}}]" value="{{$cart['product_qty']}}" style="max-width: 2.5em;">
+									<input class="cart_quantity no-footer" data-validation="number"
+                                        data-validation-allowing="range [1; {{$cart['product_quantity']}}]"
+                                        data-validation-error-msg="Số lượng vượt số lượng tồn kho." type="number"
+                                        min="1" name="cart_qty[{{$cart['session_id']}}]"
+                                        value="{{$cart['product_qty']}}" style="max-width: 2.5em;">
 
 								</div>
 							</td>
@@ -185,6 +190,7 @@
 
 		</div>
 	</div>
+
 </section>
 <!--/#cart_items-->
 

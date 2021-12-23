@@ -59,12 +59,15 @@ Route::post('/import-csv',[App\Http\Controllers\CategoryProduct::class, 'import_
 Route::get('/unactive-category-product/{category_product_id}',[App\Http\Controllers\CategoryProduct::class, 'unactive_category_product']);
 Route::get('/active-category-product/{category_product_id}',[App\Http\Controllers\CategoryProduct::class, 'active_category_product']);
 
+//Lien he
+Route::get('/lien-he',[App\Http\Controllers\ContactController::class, 'lien_he']);
+
 //Send Mail 
 Route::get('/send-mail',[App\Http\Controllers\HomeController::class, 'send_mail']);
 
 //Login facebook
-Route::get('/login-facebook','AdminController@login_facebook');
-Route::get('/admin/callback','AdminController@callback_facebook');
+Route::get('/login-facebook',[App\Http\Controllers\AdminController::class,'login_facebook']);
+Route::get('/admin/callback',[App\Http\Controllers\AdminController::class,'callback_facebook']);
 
 //Login google
 Route::get('/login-google','AdminController@login_google');
@@ -91,16 +94,17 @@ Route::post('/update-brand-product/{brand_product_id}',[App\Http\Controllers\Bra
 	Route::get('/add-product',[App\Http\Controllers\ProductController::class, 'add_product']);
 	Route::get('/edit-product/{product_id}',[App\Http\Controllers\ProductController::class, 'edit_product']);
 // });
-Route::get('users',
+Route::get('userls',
 		[
-			'uses'=>[App\Http\Controllers\UserController::class, 'index'],
+			'usels'=>[App\Http\Controllers\UserController::class, 'index'],
 			'as'=> 'Users',
 			'middleware'=> 'roles'
 			// 'roles' => ['admin','author']
 		]);
-Route::get('add-users','UserController@add_users');
-Route::post('store-users','UserController@store_users');
-Route::post('assign-roles','UserController@assign_roles');
+Route::get('users',[App\Http\Controllers\UserController::class, 'index']);
+Route::get('add-users',[App\Http\Controllers\UserController::class, 'add_users']);
+Route::post('store-users',[App\Http\Controllers\UserController::class, 'store_users']);
+Route::post('assign-roles',[App\Http\Controllers\UserController::class, 'assign_users']);
 
 
 

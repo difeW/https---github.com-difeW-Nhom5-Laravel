@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Admin extends Model
 {
-    public $timestamps = false; //set time to false
+    public $timestamps = false;
     protected $fillable = [
     	'admin_email', 'admin_password', 'admin_name','admin_phone'
     ];
@@ -14,7 +14,7 @@ class Admin extends Model
  	protected $table = 'tbl_admin';
 
  	public function roles(){
- 		return $this->belongsToMany('App\Roles');
+ 		return $this->belongsToMany('App\Models\Roles');
  	}
  	public function hasAnyRoles($roles){
 

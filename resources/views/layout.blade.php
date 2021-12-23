@@ -12,7 +12,7 @@
     <meta name="author" content="">
     <link rel="icon" type="image/x-icon" href="" />
 
-    {{-- <meta property="og:image" content="{{$image_og}}" />
+    {{--   <meta property="og:image" content="{{$image_og}}" />
     <meta property="og:site_name" content="http://localhost/tutorial_youtube/shopbanhanglaravel" />
     <meta property="og:description" content="{{$meta_desc}}" />
     <meta property="og:title" content="{{$meta_title}}" />
@@ -28,6 +28,23 @@
     <link href="{{asset('frontend/css/main.css')}}" rel="stylesheet">
     <link href="{{asset('frontend/css/responsive.css')}}" rel="stylesheet">
     <link href="{{asset('frontend/css/sweetalert.css')}}" rel="stylesheet">
+
+    <script src="{{asset('backend/js/jquery2.0.3.min.js')}}"></script>
+    <script src="{{asset('backend/js/raphael-min.js')}}"></script>
+    <script src="{{asset('backend/js/morris.js')}}"></script>
+    <style>
+    /* Note: Try to remove the following lines to see the effect of CSS positioning */
+    .affix {
+        top: 0;
+        width: 100%;
+        z-index: 9999 !important;
+    }
+
+    .affix+.container-fluid {
+        padding-top: 70px;
+    }
+    </style>
+
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
@@ -74,11 +91,13 @@
             </div>
         </div>
         <!--/header_top-->
+
         <div style="background-color: var(--saphire-blue); height: 8px;"></div>
 
         <div class="header-middle">
             <!--header-middle-->
             <div class="container">
+
                 <div class="row" >
                     <div class="col-sm-8" >
                         <div class="navbar-header">
@@ -130,11 +149,69 @@
                                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                             <span class="username">
                                                 <?php
+
                                                 $name = Session::get('customer_name');
                                                 if ($name) {
                                                     echo $name;
                                                 }
                                                 ?>
+
+                                        </span>
+                                            <b class="caret"></b>
+                                        </a>
+                                        <ul class="dropdown-menu extended logout">
+                                            <li><a href="#"></i>Profile</a></li>
+                                            <li><a href="{{URL::to('/handcash')}}"> Đơn mua</a></li>
+                                            <li><a href="{{URL::to('/logout-checkout')}}">Đăng xuất</a></li>
+                                        </ul>
+                                    </li>
+                                <?php
+                                } else {
+                                ?>
+                                    <li><a href="{{URL::to('/dang-nhap')}}">Tài khoản</a></li>
+                                <?php
+                                }
+                                ?>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/header-middle-->
+
+        <div class="header-bottom">
+            <!--header-bottom-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-7" data-offset-top="170" data-spy="affix">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="mainmenu pull-left nav justify-content-center">
+                            <ul class="nav navbar-nav collapse navbar-collapse">
+                                <li><a href="{{URL::to('/trang-chu')}}" class="active">Trang chủ</a></li>
+                                <li class="dropdown"><a href="#">Sản phẩm<i class="fa fa-angle-down"></i></a>
+                                    <ul role="menu" class="sub-menu">
+                                        @foreach($category as $key => $danhmuc)
+                                        <li><a
+                                                href="{{URL::to('/danh-muc/'.$danhmuc->category_id)}}">{{$danhmuc->category_name}}</a>
+                                        </li>
+                                        @endforeach
+                                    </ul>
+                                </li>
+                                <li class="dropdown"><a href="#">Tin tức<i class="fa fa-angle-down"></i></a>
+
+                                </li>
+                                <li><a href="{{URL::to('/gio-hang')}}">Giỏ hàng</a></li>
+                                <li><a href="{{URL::to('/lien-he')}}">Liên hệ</a></li>
                                             </span>
                                             <b class="caret"></b>
                                         </a>
@@ -158,6 +235,7 @@
                     <div class="col-sm-4">
                         <form action="{{URL::to('/tim-kiem')}}" method="POST">
                             {{csrf_field()}}
+
                             <div class="search_box search_container">
                                 <input type="text" name="keywords_submit" class="search_box-text" placeholder="Tìm kiếm sản phẩm" />
                                 <input type="submit" name="search_items" class="search_box-button" value="Tìm kiếm">
@@ -167,6 +245,7 @@
                 </div>
             </div>
         </div>
+
         <!--/header-middle-->
 
         <!--/header-bottom-->
@@ -183,21 +262,24 @@
                             <li data-target="#slider-carousel" data-slide-to="2"></li>
                         </ol>
                         <style type="text/css">
-                            img.img.img-responsive.img-slider {
-                                height: 350px;
-                            }
+                        img.img.img-responsive.img-slider {
+                            height: 350px;
+                        }
                         </style>
                         <div class="carousel-inner">
+
                             <?php
                             $i = 0;
                             ?>
                             @foreach($slider as $key => $slide)
                             <?php
+
                             $i++;
                             ?>
                             <div class="item {{$i==1 ? 'active' : '' }}">
 
                                 <div class="col-sm-12">
+
                                     <img alt="{{$slide->slider_desc}}" src="{{asset('uploads/slider/'.$slide->slider_image)}}" height="100" width="120%" class="img img-responsive img-slider">
 
                                 </div>
@@ -220,7 +302,9 @@
 
     <section>
         <div class="container">
+
             @yield('content')
+
         </div>
     </section>
 
@@ -251,12 +335,12 @@
                                 <h2>24 DEC 2014</h2>
                             </div>
                         </div>
-                        
+
                         <div class="col-sm-3">
                             <div class="video-gallery text-center">
                                 <a href="#">
                                     <div class="iframe-img">
-                                         <img src="{{ asset('frontend/images/iframe2.png')}}" alt="" />
+                                        <img src="{{ asset('frontend/images/iframe2.png')}}" alt="" />
                                     </div>
                                     <div class="overlay-icon">
                                         <i class="fa fa-play-circle-o"></i>
@@ -266,12 +350,12 @@
                                 <h2>24 DEC 2014</h2>
                             </div>
                         </div>
-                        
+
                         <div class="col-sm-3">
                             <div class="video-gallery text-center">
                                 <a href="#">
                                     <div class="iframe-img">
-                                         <img src="{{asset('frontend/images/iframe3.png')}}" alt="" />
+                                        <img src="{{asset('frontend/images/iframe3.png')}}" alt="" />
                                     </div>
                                     <div class="overlay-icon">
                                         <i class="fa fa-play-circle-o"></i>
@@ -281,12 +365,12 @@
                                 <h2>24 DEC 2014</h2>
                             </div>
                         </div>
-                        
+
                         <div class="col-sm-3">
                             <div class="video-gallery text-center">
                                 <a href="#">
                                     <div class="iframe-img">
-                                         <img src="{{asset('frontend/images/iframe4.png')}}" alt="" />
+                                        <img src="{{asset('frontend/images/iframe4.png')}}" alt="" />
                                     </div>
                                     <div class="overlay-icon">
                                         <i class="fa fa-play-circle-o"></i>
@@ -305,6 +389,7 @@
                     </div>
                 </div>
             </div>
+
         </div>-->
 
             <div class="footer-widget">
@@ -320,6 +405,7 @@
                                     <li><a href="#">Đổi trả sản phẩm</a></li>
                                 </ul>
                             </div>
+
                         </div>
                         <div class="col-sm-4">
                             <div class="single-widget">
@@ -332,6 +418,7 @@
                                 </ul>
                             </div>
                         </div>
+
                         <div class="col-sm-4">
                             <div class="single-widget">
                                 <h2>Nhận tin khuyến mãi</h2>
@@ -344,11 +431,11 @@
 
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
 
-            <div style="background-color: var(--saphire-blue); height: 8px;"></div>
+        <div style="background-color: var(--saphire-blue); height: 8px;"></div>
             <div class="footer-bottom">
                 <div class="container">
                     <div class="row">
@@ -360,8 +447,13 @@
 
     </footer>
     <!--/Footer-->
+    <script src="{{asset('backend/js/jquery.form-validator.min.js')}}"></script>
 
+    <script type="text/javascript">
+    $.validate({
 
+    });
+    </script>
 
     <script src="{{asset('frontend/js/jquery.js')}}"></script>
     <script src="{{asset('frontend/js/bootstrap.min.js')}}"></script>
@@ -370,10 +462,11 @@
     <script src="{{asset('frontend/js/jquery.prettyPhoto.js')}}"></script>
     <script src="{{asset('frontend/js/main.js')}}"></script>
 
-
+    </script>
     <script src="{{asset('frontend/js/sweetalert.min.js')}}"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     {{-- <script src="https://www.paypal.com/sdk/js?client-id=sb"></script>
     <script>paypal.Buttons().render('body');</script> --}}
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
@@ -381,7 +474,9 @@
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v6.0&appId=2339123679735877&autoLogAppEvents=1"></script>
 
 
+    <script type="text/javascript" src="{{asset('backend/js/monthly.js')}}"></script>
     <script type="text/javascript">
+
         $(document).ready(function() {
             $('.send-order').click(function() {
                 Swal.fire({
@@ -452,10 +547,13 @@
                         alert('1');
                     }
                 });
+
             });
         });
+    });
     </script>
     <script type="text/javascript">
+
         $(document).ready(function() {
             $('.add-to-cart').click(function() {
                 var id = $(this).data('id_product');
@@ -495,10 +593,13 @@
                         });
                     }
                 });
+
             });
         });
+    });
     </script>
     <script type="text/javascript">
+
         $(document).ready(function() {
             $('.choose').on('change', function() {
                 var action = $(this).attr('id');
@@ -510,6 +611,7 @@
                     result = 'province';
                 } else {
                     result = 'wards';
+
                 }
                 $.ajax({
                     url: '{{url(' / select - delivery - home ')}}',
@@ -525,6 +627,7 @@
                 });
             });
         });
+
     </script>
     <script type="text/javascript">
         $(document).ready(function() {
@@ -551,6 +654,7 @@
                     });
                 }
             });
+
         });
     </script>
 </body>
