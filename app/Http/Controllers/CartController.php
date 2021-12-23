@@ -54,8 +54,8 @@ class CartController extends Controller
         $slider = Slider::orderBy('slider_id','DESC')->where('slider_status','1')->take(4)->get();
 
         $meta_desc = "Giỏ hàng của bạn"; 
-        $meta_keywords = "Giỏ hàng Ajax";
-        $meta_title = "Giỏ hàng Ajax";
+        $meta_keywords = "Giỏ hàng";
+        $meta_title = "Giỏ hàng";
         $url_canonical = $request->url();
         //--seo
         $cate_product = DB::table('tbl_category_product')->where('category_status','0')->orderby('category_id','desc')->get(); 
@@ -134,10 +134,10 @@ class CartController extends Controller
                     if($val['session_id']==$key ){
 
                         $cart[$session]['product_qty'] = $qty;
-                        $message.='<p style="color:blue">'.$i.') Cập nhật số lượng :'.$cart[$session]['product_name'].' thành công</p>';
+                        $message.='<p style="color:blue">'.$i.') Cập nhật số lượng '.$cart[$session]['product_name'].' thành công</p>';
 
                     }elseif($val['session_id']==$key && $qty>$cart[$session]['product_qty']){
-                        $message.='<p style="color:red">'.$i.') Cập nhật số lượng :'.$cart[$session]['product_name'].' thất bại</p>';
+                        $message.='<p style="color:red">'.$i.') Cập nhật số lượng '.$cart[$session]['product_name'].' thất bại</p>';
                     }
 
                 }
